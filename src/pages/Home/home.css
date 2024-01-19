@@ -1,0 +1,45 @@
+.home-section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-link {
+  max-width: 95vw;
+  padding: 10px;
+  border: 3px solid var(--secondary);
+  border-radius: 5px;
+  margin: auto;
+  background: var(--tertiary);
+  color: var(--secondary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+  animation: home-link--appear 1s ease-in-out;
+}
+
+@keyframes home-link--appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.home-link:hover {
+  background: var(--secondary);
+  color: var(--tertiary);
+  transition: 0.5s;
+}
+
+.home-link:active {
+  transform: scale(0.95);
+}

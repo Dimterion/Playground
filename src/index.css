@@ -1,6 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+:root {
+  --primary: #0d1b2a;
+  --secondary: #e0e1dd;
+  --tertiary: #415a77;
+}
+
+body {
+  background: var(--primary);
+  color: var(--secondary);
+  font-family: "Play", sans-serif;
 }
