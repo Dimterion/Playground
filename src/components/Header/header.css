@@ -1,0 +1,14 @@
+.header-link {
+  position: absolute;
+  margin: 5px;
+  color: var(--secondary);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.header-link:hover {
+  color: var(--tertiary);
+  transition: 0.5s;
+}

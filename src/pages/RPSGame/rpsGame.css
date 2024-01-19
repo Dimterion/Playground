@@ -1,0 +1,35 @@
+.rpsGame-section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.rpsGame-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  margin: 10px;
+  background: var(--tertiary);
+  color: var(--secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.75s;
+}
+
+.rpsGame-btn:hover {
+  transform: scale(0.95);
+  background: var(--secondary);
+  color: var(--tertiary);
+  transition: 0.75s;
+}
+
+.rpsGame-btn:active {
+  transform: scale(0.8);
+}

@@ -20,7 +20,7 @@
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  transition: 0.5s;
+  transition: 0.75s;
   animation: home-link--appear 1s ease-in-out;
 }
 
@@ -35,9 +35,10 @@
 }
 
 .home-link:hover {
+  transform: scale(0.99);
   background: var(--secondary);
   color: var(--tertiary);
-  transition: 0.5s;
+  transition: 0.75s;
 }
 
 .home-link:active {
