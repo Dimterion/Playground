@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaHandPaper, FaHandRock, FaHandScissors } from "react-icons/fa";
 import { roll } from "./utils";
+import player from "../../assets/RPSGame/player.jpg";
+import opponent from "../../assets/RPSGame/opponent.jpg";
 import rock from "../../assets/RPSGame/rock.jpg";
 import paper from "../../assets/RPSGame/paper.jpg";
 import scissors from "../../assets/RPSGame/scissors.jpg";
@@ -9,9 +11,7 @@ import Header from "../../components/Header/Header";
 import "./rpsGame.css";
 
 export default function RPSGame() {
-  const [gameStatus, setGameStatus] = useState(
-    "Make your choice to start the game"
-  );
+  const [gameStatus, setGameStatus] = useState("Choose to start");
   const [playerRoll, setPlayerRoll] = useState("question mark");
   const [opponentRoll, setOpponentRoll] = useState("question mark");
   const [rollAnimation, setRollAnimation] = useState(false);
@@ -61,7 +61,25 @@ export default function RPSGame() {
     <>
       <Header />
       <section className="rpsGame-section">
-        <h1>Rock, Paper, Scissors</h1>
+        <div className="rpsGame-playersInfoContainer">
+          <div>
+            <img
+              src={player}
+              alt="Futuristic android with a pen and tablet"
+              className="rpsGame-portrait"
+            />
+            <h3>Player</h3>
+          </div>
+          <div>
+            <img
+              src={opponent}
+              alt="Futuristic android with a pen and tablet"
+              className="rpsGame-portrait"
+            />
+            <h3>Opponent</h3>
+          </div>
+        </div>
+        <h1 className="rpsGame-heading">Rock, Paper, Scissors</h1>
         <div>
           <img
             src={playerRollImg}
@@ -80,7 +98,7 @@ export default function RPSGame() {
             onAnimationEnd={() => setRollAnimation(false)}
           />
         </div>
-        <h2>{gameStatus}</h2>
+        <h2 className="rpsGame-subHeading">{gameStatus}</h2>
         <div className="rpsGame-buttons">{buttons}</div>
       </section>
     </>
