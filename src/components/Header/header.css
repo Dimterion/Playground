@@ -5,6 +5,21 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.5s;
+  animation: header-link--appear 1s ease-in-out;
+}
+
+@keyframes header-link--appear {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .header-link:hover {

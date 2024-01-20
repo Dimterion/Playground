@@ -14,6 +14,9 @@ export default function RPSGame() {
   );
   const [playerRoll, setPlayerRoll] = useState("question mark");
   const [opponentRoll, setOpponentRoll] = useState("question mark");
+  const [rollAnimation, setRollAnimation] = useState(false);
+
+  const playerRolls = ["rock", "paper", "scissors"];
 
   const playerRollImg =
     playerRoll === "rock"
@@ -33,49 +36,52 @@ export default function RPSGame() {
       ? scissors
       : questionMark;
 
+  const buttons = playerRolls.map((playerRoll) => {
+    return (
+      <button
+        key={playerRoll}
+        onClick={() => {
+          roll(playerRoll, setPlayerRoll, setOpponentRoll, setGameStatus);
+          setRollAnimation(true);
+        }}
+        className="rpsGame-btn"
+      >
+        {playerRoll === "rock" ? (
+          <FaHandRock />
+        ) : playerRoll === "paper" ? (
+          <FaHandPaper />
+        ) : (
+          <FaHandScissors />
+        )}
+      </button>
+    );
+  });
+
   return (
     <>
       <Header />
       <section className="rpsGame-section">
-        <h2>{gameStatus}</h2>
+        <h1>Rock, Paper, Scissors</h1>
         <div>
           <img
             src={playerRollImg}
             alt={`Futuristic ${playerRoll}`}
-            className="rpsGame-img"
+            className={
+              rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
+            }
+            onAnimationEnd={() => setRollAnimation(false)}
           />
           <img
             src={opponentRollImg}
             alt={`Futuristic ${opponentRoll}`}
-            className="rpsGame-img"
+            className={
+              rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
+            }
+            onAnimationEnd={() => setRollAnimation(false)}
           />
         </div>
-        <div>
-          <button
-            onClick={() =>
-              roll("rock", setPlayerRoll, setOpponentRoll, setGameStatus)
-            }
-            className="rpsGame-btn rpsGame-rotatedBtn"
-          >
-            <FaHandRock />
-          </button>
-          <button
-            onClick={() =>
-              roll("paper", setPlayerRoll, setOpponentRoll, setGameStatus)
-            }
-            className="rpsGame-btn"
-          >
-            <FaHandPaper />
-          </button>
-          <button
-            onClick={() =>
-              roll("scissors", setPlayerRoll, setOpponentRoll, setGameStatus)
-            }
-            className="rpsGame-btn"
-          >
-            <FaHandScissors />
-          </button>
-        </div>
+        <h2>{gameStatus}</h2>
+        <div className="rpsGame-buttons">{buttons}</div>
       </section>
     </>
   );
