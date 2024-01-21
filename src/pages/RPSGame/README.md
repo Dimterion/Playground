@@ -3,6 +3,7 @@
 ## _A game made with React_
 
 [LIVE DEMO](https://playground-dimterion.vercel.app/)
+
 [REPO](https://github.com/Dimterion/Playground)
 
 ## Features
@@ -40,8 +41,8 @@ npm run dev
 
 ## Links
 
-| Name    | Link                             |
-| ------- | -------------------------------- |
-| GitHub  | [https://github.com/Dimterion]   |
-| Medium  | [https://medium.com/@dimterion]  |
-| Twitter | [https://twitter.com/Dimterion/] |
+| Name    | Link                           |
+| ------- | ------------------------------ |
+| GitHub  | https://github.com/Dimterion   |
+| Medium  | https://medium.com/@dimterion  |
+| Twitter | https://twitter.com/Dimterion/ |

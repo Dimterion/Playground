@@ -139,7 +139,7 @@ export default function RPSGame() {
             <h3>Player</h3>
             <img
               src={player}
-              alt="Futuristic android with a pen and tablet"
+              alt="Futuristic android with pen and tablet"
               className="rpsGame-portrait"
             />
             {playerHearts}
@@ -148,7 +148,7 @@ export default function RPSGame() {
             <h3>Opponent</h3>
             <img
               src={opponent}
-              alt="Futuristic android with a pen and tablet"
+              alt="Futuristic android with pen and tablet"
               className="rpsGame-portrait"
             />
             {opponentHearts}
@@ -159,7 +159,7 @@ export default function RPSGame() {
           <div>
             <img
               src={opponent}
-              alt="Futuristic android with a pen and tablet"
+              alt="Futuristic android with pen and tablet"
               className="rpsGame-winImg"
             />
           </div>
@@ -167,7 +167,7 @@ export default function RPSGame() {
           <div>
             <img
               src={player}
-              alt="Futuristic android with a pen and tablet"
+              alt="Futuristic android with pen and tablet"
               className="rpsGame-winImg"
             />
           </div>
