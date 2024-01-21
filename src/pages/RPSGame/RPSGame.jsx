@@ -122,6 +122,7 @@ export default function RPSGame() {
           setRollAnimation(true);
         }}
         disabled={playerScore === 0 || opponentScore === 0}
+        aria-label={playerRoll}
         className="rpsGame-btn"
       >
         {playerRoll === "rock" ? (

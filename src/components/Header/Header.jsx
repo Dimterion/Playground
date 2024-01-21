@@ -4,7 +4,7 @@ import "./header.css";
 
 export default function Header() {
   return (
-    <Link to="/" className="header-link">
+    <Link to="/" aria-label="Back to home page" className="header-link">
       <FaBackward />
     </Link>
   );
