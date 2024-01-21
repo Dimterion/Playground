@@ -8,6 +8,7 @@ export function roll(
 ) {
   setPlayerRoll(playerRoll);
 
+  // Random number that defines opponent's choice (rock/paper/scissors)
   const randomNumber = Math.floor(Math.random() * 3);
   const opponentRoll =
     randomNumber === 0 ? "rock" : randomNumber === 1 ? "paper" : "scissors";
@@ -16,6 +17,7 @@ export function roll(
 
   let gameStatus;
 
+  // Setting the game status and score based on the rolled numbers
   if (playerRoll === "rock" && opponentRoll === "scissors") {
     gameStatus = "You win the round!";
     setOpponentScore((prevOpponentScore) => prevOpponentScore - 1);

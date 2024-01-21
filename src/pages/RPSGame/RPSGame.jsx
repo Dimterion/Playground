@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 import { VscDebugRestart } from "react-icons/vsc";
-import { roll } from "./utils";
+import { roll } from "./rpsGameUtils";
 import player from "../../assets/RPSGame/player.jpg";
 import opponent from "../../assets/RPSGame/opponent.jpg";
 import rock from "../../assets/RPSGame/rock.jpg";
@@ -27,6 +27,7 @@ export default function RPSGame() {
   const [opponentRoll, setOpponentRoll] = useState("question mark");
   const [rollAnimation, setRollAnimation] = useState(false);
 
+  // Player's lives based on the score
   const playerHearts =
     playerScore === 3 ? (
       <div className="rpsGame-heartsContainer">
@@ -54,6 +55,7 @@ export default function RPSGame() {
       </div>
     );
 
+  // Opponent's lives based on the score
   const opponentHearts =
     opponentScore === 3 ? (
       <div className="rpsGame-heartsContainer">
@@ -83,6 +85,7 @@ export default function RPSGame() {
 
   const playerRolls = ["rock", "paper", "scissors"];
 
+  // Displayed image based on the player's pick
   const playerRollImg =
     playerRoll === "rock"
       ? rock
@@ -92,6 +95,7 @@ export default function RPSGame() {
       ? scissors
       : questionMark;
 
+  // Displayed image based on the opponent's pick
   const opponentRollImg =
     opponentRoll === "rock"
       ? rock
@@ -101,6 +105,7 @@ export default function RPSGame() {
       ? scissors
       : questionMark;
 
+  // Buttons with game options (rock/paper/scissors)
   const buttons = playerRolls.map((playerRoll) => {
     return (
       <button
