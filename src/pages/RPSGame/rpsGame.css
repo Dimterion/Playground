@@ -19,7 +19,19 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 20px;
+  margin: 10px 20px;
+}
+
+@media (min-width: 1200px) {
+  .rpsGame-playersInfoContainer {
+    margin: 10px 10rem;
+  }
+}
+
+.rpsGame-playersInfoContainerItem {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .rpsGame-portrait {
@@ -30,8 +42,15 @@
   margin: 15px;
 }
 
+.rpsGame-heartsContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  font-size: 1.25rem;
+}
+
 .rpsGame-heading {
-  margin: 30px;
+  margin: 20px;
   font-size: 2rem;
   font-style: italic;
 }
@@ -67,7 +86,16 @@
 }
 
 .rpsGame-subHeading {
-  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto 10px;
+}
+
+@media (max-width: 600px) {
+  .rpsGame-subHeading {
+    font-size: 1.25rem;
+  }
 }
 
 .rpsGame-buttons {
@@ -99,4 +127,8 @@
 
 .rpsGame-btn:active {
   transform: scale(0.8);
+}
+
+.rpsGame-btn:disabled {
+  opacity: 0.5;
 }
