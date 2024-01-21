@@ -40,6 +40,38 @@
   align-items: center;
 }
 
+.rpsGame-winPortrait {
+  animation: rpsGame-winPortrait--move 2s ease-in-out infinite;
+}
+
+@keyframes rpsGame-winPortrait--move {
+  0% {
+    transform: scale(0.9) rotate(0);
+    border-color: var(--tertiary);
+  }
+
+  25% {
+    transform: scale(1) rotate(5deg);
+    border-color: var(--secondary);
+  }
+
+  50% {
+    transform: scale(0.9) rotate(0);
+    border-color: var(--tertiary);
+  }
+
+  75% {
+    transform: scale(1) rotate(-5deg);
+    border-color: var(--secondary);
+  }
+
+  100% {
+    transform: scale(0.9) rotate(0);
+    border-color: var(--tertiary);
+  }
+}
+
+.rpsGame-winPortrait,
 .rpsGame-portrait {
   width: 128px;
   max-width: 20vw;
@@ -61,23 +93,6 @@
   font-style: italic;
 }
 
-.rpsGame-winImg {
-  animation: rpsGame-winImg--appear 0.5s ease-in-out;
-}
-
-@keyframes rpsGame-winImg--appear {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.rpsGame-winImg,
 .rpsGame-img,
 .rpsGame-imgAnimation {
   max-width: 80vw;
@@ -87,7 +102,6 @@
 }
 
 @media (max-width: 600px) {
-  .rpsGame-winImg,
   .rpsGame-img,
   .rpsGame-imgAnimation {
     max-width: 120px;

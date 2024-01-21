@@ -145,7 +145,9 @@ export default function RPSGame() {
             <img
               src={player}
               alt="Futuristic android with pen and tablet"
-              className="rpsGame-portrait"
+              className={
+                opponentScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
+              }
             />
             {playerHearts}
           </div>
@@ -154,48 +156,32 @@ export default function RPSGame() {
             <img
               src={opponent}
               alt="Futuristic android with pen and tablet"
-              className="rpsGame-portrait"
+              className={
+                playerScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
+              }
             />
             {opponentHearts}
           </div>
         </div>
         <h1 className="rpsGame-heading">Rock, Paper, Scissors</h1>
-        {playerScore === 0 ? (
-          <div>
-            <img
-              src={opponent}
-              alt="Futuristic android with pen and tablet"
-              className="rpsGame-winImg"
-            />
-          </div>
-        ) : opponentScore === 0 ? (
-          <div>
-            <img
-              src={player}
-              alt="Futuristic android with pen and tablet"
-              className="rpsGame-winImg"
-            />
-          </div>
-        ) : (
-          <div>
-            <img
-              src={playerRollImg}
-              alt={`Futuristic ${playerRoll}`}
-              className={
-                rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
-              }
-              onAnimationEnd={() => setRollAnimation(false)}
-            />
-            <img
-              src={opponentRollImg}
-              alt={`Futuristic ${opponentRoll}`}
-              className={
-                rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
-              }
-              onAnimationEnd={() => setRollAnimation(false)}
-            />
-          </div>
-        )}
+        <div>
+          <img
+            src={playerRollImg}
+            alt={`Futuristic ${playerRoll}`}
+            className={
+              rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
+            }
+            onAnimationEnd={() => setRollAnimation(false)}
+          />
+          <img
+            src={opponentRollImg}
+            alt={`Futuristic ${opponentRoll}`}
+            className={
+              rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
+            }
+            onAnimationEnd={() => setRollAnimation(false)}
+          />
+        </div>
         <h2 className="rpsGame-subHeading">
           {gameStatus === "Choose to start" && <TbArrowBigDownLinesFilled />}
           {playerScore === 0
