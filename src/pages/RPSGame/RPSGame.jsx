@@ -17,6 +17,7 @@ import scissors from "../../assets/RPSGame/scissors.jpg";
 import questionMark from "../../assets/RPSGame/questionMark.jpg";
 import Header from "../../components/Header/Header";
 import "./rpsGame.css";
+import Footer from "../../components/Footer/Footer";
 
 export default function RPSGame() {
   const [playerScore, setPlayerScore] = useState(3);
@@ -130,7 +131,7 @@ export default function RPSGame() {
   });
 
   return (
-    <>
+    <div className="rpsGame-container">
       <Header />
       <section className="rpsGame-section">
         <div className="rpsGame-playersInfoContainer">
@@ -159,7 +160,7 @@ export default function RPSGame() {
             <img
               src={opponent}
               alt="Futuristic android with a pen and tablet"
-              className="rpsGame-img"
+              className="rpsGame-winImg"
             />
           </div>
         ) : opponentScore === 0 ? (
@@ -167,7 +168,7 @@ export default function RPSGame() {
             <img
               src={player}
               alt="Futuristic android with a pen and tablet"
-              className="rpsGame-img"
+              className="rpsGame-winImg"
             />
           </div>
         ) : (
@@ -216,6 +217,7 @@ export default function RPSGame() {
           </button>
         )}
       </section>
-    </>
+      <Footer />
+    </div>
   );
 }

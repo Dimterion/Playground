@@ -1,0 +1,29 @@
+.footer-link {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 2px;
+  margin: auto auto 5px;
+  color: var(--secondary);
+  text-decoration: none;
+  animation: footer-link--appear 1s ease-in-out;
+}
+
+@keyframes footer-link--appear {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.footer-link:hover {
+  color: var(--tertiary);
+  transition: 0.5s;
+}
