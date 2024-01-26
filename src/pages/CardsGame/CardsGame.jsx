@@ -6,7 +6,7 @@ export default function CardsGame() {
   return (
     <div className="cardsGame-container">
       <Header />
-      <section>
+      <section className="cardsGame-section">
         <h1>Cards Game</h1>
       </section>
       <Footer />
