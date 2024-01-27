@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaHandPaper,
   FaHandRock,
@@ -26,6 +26,10 @@ export default function RPSGame() {
   const [playerRoll, setPlayerRoll] = useState("question mark");
   const [opponentRoll, setOpponentRoll] = useState("question mark");
   const [rollAnimation, setRollAnimation] = useState(false);
+
+  useEffect(() => {
+    document.title = "Rock, Paper, Scissors";
+  }, []);
 
   // Player's lives based on the score
   const playerHearts =
