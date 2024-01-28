@@ -31,49 +31,21 @@ export default function RPSGame() {
     document.title = "Rock, Paper, Scissors";
   }, []);
 
-  // Player's lives based on the score
-  const playerHearts =
-    playerScore === 3 ? (
+  // Lives based on score
+  const hearts = function (score) {
+    return score === 3 ? (
       <div className="rpsGame-heartsContainer">
         <FaHeart />
         <FaHeart />
         <FaHeart />
       </div>
-    ) : playerScore === 2 ? (
+    ) : score === 2 ? (
       <div className="rpsGame-heartsContainer">
         <FaHeart />
         <FaHeart />
         <FaRegHeart />
       </div>
-    ) : playerScore === 1 ? (
-      <div className="rpsGame-heartsContainer">
-        <FaHeart />
-        <FaRegHeart />
-        <FaRegHeart />
-      </div>
-    ) : (
-      <div className="rpsGame-heartsContainer">
-        <FaRegHeart />
-        <FaRegHeart />
-        <FaRegHeart />
-      </div>
-    );
-
-  // Opponent's lives based on the score
-  const opponentHearts =
-    opponentScore === 3 ? (
-      <div className="rpsGame-heartsContainer">
-        <FaHeart />
-        <FaHeart />
-        <FaHeart />
-      </div>
-    ) : opponentScore === 2 ? (
-      <div className="rpsGame-heartsContainer">
-        <FaHeart />
-        <FaHeart />
-        <FaRegHeart />
-      </div>
-    ) : opponentScore === 1 ? (
+    ) : score === 1 ? (
       <div className="rpsGame-heartsContainer">
         <FaHeart />
         <FaRegHeart />
@@ -86,6 +58,7 @@ export default function RPSGame() {
         <FaRegHeart />
       </div>
     );
+  };
 
   const playerRolls = ["rock", "paper", "scissors"];
 
@@ -154,7 +127,7 @@ export default function RPSGame() {
                 opponentScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
               }
             />
-            {playerHearts}
+            {hearts(playerScore)}
           </div>
           <div className="rpsGame-playersInfoContainerItem">
             <h3>Opponent</h3>
@@ -165,7 +138,7 @@ export default function RPSGame() {
                 playerScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
               }
             />
-            {opponentHearts}
+            {hearts(opponentScore)}
           </div>
         </div>
         <h1 className="rpsGame-heading">Rock, Paper, Scissors</h1>
