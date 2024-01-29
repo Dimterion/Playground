@@ -62,25 +62,16 @@ export default function RPSGame() {
 
   const playerRolls = ["rock", "paper", "scissors"];
 
-  // Displayed image based on the player's pick
-  const playerRollImg =
-    playerRoll === "rock"
+  // Image based on roll
+  const rollImg = function (roll) {
+    return roll === "rock"
       ? rock
-      : playerRoll === "paper"
+      : roll === "paper"
       ? paper
-      : playerRoll === "scissors"
+      : roll === "scissors"
       ? scissors
       : questionMark;
-
-  // Displayed image based on the opponent's pick
-  const opponentRollImg =
-    opponentRoll === "rock"
-      ? rock
-      : opponentRoll === "paper"
-      ? paper
-      : opponentRoll === "scissors"
-      ? scissors
-      : questionMark;
+  };
 
   // Buttons with game options (rock/paper/scissors)
   const buttons = playerRolls.map((playerRoll) => {
@@ -144,7 +135,7 @@ export default function RPSGame() {
         <h1 className="rpsGame-heading">Rock, Paper, Scissors</h1>
         <div>
           <img
-            src={playerRollImg}
+            src={rollImg(playerRoll)}
             alt={`Futuristic ${playerRoll}`}
             className={
               rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
@@ -152,7 +143,7 @@ export default function RPSGame() {
             onAnimationEnd={() => setRollAnimation(false)}
           />
           <img
-            src={opponentRollImg}
+            src={rollImg(opponentRoll)}
             alt={`Futuristic ${opponentRoll}`}
             className={
               rollAnimation === true ? "rpsGame-imgAnimation" : "rpsGame-img"
