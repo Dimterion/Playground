@@ -60,8 +60,6 @@ export default function RPSGame() {
     );
   };
 
-  const playerRolls = ["rock", "paper", "scissors"];
-
   // Image based on roll
   const rollImg = function (roll) {
     return roll === "rock"
@@ -73,7 +71,9 @@ export default function RPSGame() {
       : questionMark;
   };
 
-  // Buttons with game options (rock/paper/scissors)
+  const playerRolls = ["rock", "paper", "scissors"];
+
+  // Buttons to choose player's option
   const buttons = playerRolls.map((playerRoll) => {
     return (
       <button
