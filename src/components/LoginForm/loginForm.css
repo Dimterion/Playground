@@ -1,0 +1,86 @@
+.loginForm-container {
+  width: 80%;
+  max-width: 600px;
+  height: fit-content;
+  padding: 40px 30px;
+  border-radius: 20px;
+  margin: 50px auto;
+  background: hsl(var(--primary-hsl), 0.9);
+  box-shadow: 0 0 15px 0 hsl(var(--primary-hsl));
+}
+
+.loginForm-title {
+  font-size: 2rem;
+}
+
+.loginForm-form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.loginForm-inputGroup {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 7px;
+  text-align: start;
+}
+
+.loginForm-inputGroup input {
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: hsl(var(--secondary-hsl), 0.3);
+  color: var(--secondary);
+  font-size: 1.25rem;
+}
+
+.loginForm-inputGroup.loginForm-success input {
+  box-shadow: 0 0 0 2px var(--success);
+}
+
+.loginForm-inputGroup.loginForm-error input {
+  box-shadow: 0 0 0 2px var(--error);
+}
+
+.loginForm-inputGroup input:focus {
+  box-shadow: 0 0 0 2px var(--secondary);
+}
+
+.loginForm-inputGroup .loginForm-msg {
+  display: none;
+  font-size: 0.75rem;
+}
+
+.loginForm-inputGroup.loginForm-success .loginForm-msg,
+.loginForm-inputGroup.loginForm-error .loginForm-msg {
+  display: block;
+}
+
+.loginForm-inputGroup.loginForm-success .loginForm-msg {
+  color: var(--success);
+}
+
+.loginForm-inputGroup.loginForm-error .loginForm-msg {
+  color: var(--error);
+}
+
+.loginForm-submitBtn {
+  padding: 0.5em 1em;
+  border: 2px solid var(--tertiary);
+  border-radius: 5px;
+  outline: none;
+  background: hsl(var(--tertiary-hsl), 0.6);
+  color: var(--secondary);
+  font-family: var(--font);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.loginForm-submitBtn:hover,
+.loginForm-submitBtn:focus {
+  background: hsl(var(--tertiary-hsl), 0.8);
+}

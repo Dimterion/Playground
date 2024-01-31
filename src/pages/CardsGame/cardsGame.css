@@ -1,7 +1,10 @@
 .cardsGame-container {
   display: flex;
   flex-flow: column nowrap;
+  min-width: 100vw;
   min-height: 100vh;
+  background: url(../../assets/CardsGame/backgroundImg.jpg) center;
+  background-size: cover;
 }
 
 .cardsGame-section {

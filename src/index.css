@@ -11,10 +11,19 @@
   --primary: #0d1b2a;
   --secondary: #e0e1dd;
   --tertiary: #415a77;
+
+  --error: #e63946;
+  --success: #57cc99;
+
+  --primary-hsl: 211, 53%, 11%;
+  --secondary-hsl: 75, 6%, 87%;
+  --tertiary-hsl: 212, 29%, 36%;
+
+  --font: "Play", sans-serif;
 }
 
 body {
   background: var(--primary);
   color: var(--secondary);
-  font-family: "Play", sans-serif;
+  font-family: var(--font);
 }
