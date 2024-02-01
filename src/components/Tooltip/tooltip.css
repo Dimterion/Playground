@@ -1,0 +1,13 @@
+.tooltip-section {
+  display: flex;
+  justify-content: center;
+  margin: 150px 0;
+}
+
+.tooltip-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: url("../../assets/Tooltip/tooltipImg.jpg") center;
+  background-size: cover;
+}

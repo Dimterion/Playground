@@ -16,8 +16,8 @@ import paper from "../../assets/RPSGame/paper.jpg";
 import scissors from "../../assets/RPSGame/scissors.jpg";
 import questionMark from "../../assets/RPSGame/questionMark.jpg";
 import Header from "../../components/Header/Header";
-import "./rpsGame.css";
 import Footer from "../../components/Footer/Footer";
+import "./rpsGame.css";
 
 export default function RPSGame() {
   const [playerScore, setPlayerScore] = useState(3);
