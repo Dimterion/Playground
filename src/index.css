@@ -8,6 +8,7 @@
 }
 
 :root {
+  /* Colors */
   --primary: #0d1b2a;
   --secondary: #e0e1dd;
   --tertiary: #415a77;
@@ -19,6 +20,7 @@
   --secondary-hsl: 75, 6%, 87%;
   --tertiary-hsl: 212, 29%, 36%;
 
+  /* Font */
   --font: "Play", sans-serif;
 }
 

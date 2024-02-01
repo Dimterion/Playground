@@ -5,9 +5,50 @@
 }
 
 .tooltip-img {
+  position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   background: url("../../assets/Tooltip/tooltipImg.jpg") center;
   background-size: cover;
+}
+
+.tooltip-img::before,
+.tooltip-img::after {
+  --tooltipScale: 0;
+  --tooltipArrowSize: 10px;
+  --tooltipColor: var(--primary);
+
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--tooltipImgTranslateY, 0))
+    scale(var(--tooltipScale));
+  transform-origin: bottom center;
+  transition: 150ms transform;
+}
+
+.tooltip-img::before {
+  --tooltipImgTranslateY: calc(-100% - var(--tooltipArrowSize));
+
+  content: attr(data-tooltip);
+  width: max-content;
+  max-width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: var(--tooltipColor);
+}
+
+.tooltip-img:hover::before,
+.tooltip-img:hover::after {
+  --tooltipScale: 1;
+}
+
+.tooltip-img::after {
+  --tooltipImgTranslateY: calc(-1 * var(--tooltipArrowSize));
+
+  content: "";
+  transform-origin: top center;
+  border: var(--tooltipArrowSize) solid transparent;
+  border-top-color: var(--tooltipColor);
 }
