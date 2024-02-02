@@ -1,4 +1,5 @@
 export function roll(
+  playerRolls,
   playerRoll,
   setPlayerRoll,
   setOpponentRoll,
@@ -9,7 +10,7 @@ export function roll(
   setPlayerRoll(playerRoll);
 
   // Random number that defines opponent's choice
-  const randomNumber = Math.floor(Math.random() * 3);
+  const randomNumber = Math.floor(Math.random() * playerRolls.length);
   const opponentRoll =
     randomNumber === 0 ? "rock" : randomNumber === 1 ? "paper" : "scissors";
 

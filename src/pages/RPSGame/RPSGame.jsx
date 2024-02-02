@@ -80,6 +80,7 @@ export default function RPSGame() {
         key={playerRoll}
         onClick={() => {
           roll(
+            playerRolls,
             playerRoll,
             setPlayerRoll,
             setOpponentRoll,
