@@ -10,35 +10,26 @@ export function roll(
   setPlayerRoll(playerRoll);
 
   // Random number that defines opponent's choice
-  const randomNumber = Math.floor(Math.random() * playerRolls.length);
   const opponentRoll =
-    randomNumber === 0 ? "rock" : randomNumber === 1 ? "paper" : "scissors";
+    playerRolls[Math.floor(Math.random() * playerRolls.length)];
 
   setOpponentRoll(opponentRoll);
 
   let gameStatus;
 
   // Game status and score based on the rolled number
-  if (playerRoll === "rock" && opponentRoll === "scissors") {
-    gameStatus = "You win the round!";
-    setOpponentScore((prevOpponentScore) => prevOpponentScore - 1);
-  } else if (playerRoll === "rock" && opponentRoll === "paper") {
-    gameStatus = "Opponent wins the round!";
-    setPlayerScore((prevPlayerScore) => prevPlayerScore - 1);
-  } else if (playerRoll === "paper" && opponentRoll === "rock") {
-    gameStatus = "You win the round!";
-    setOpponentScore((prevOpponentScore) => prevOpponentScore - 1);
-  } else if (playerRoll === "paper" && opponentRoll === "scissors") {
-    gameStatus = "Opponent wins the round!";
-    setPlayerScore((prevPlayerScore) => prevPlayerScore - 1);
-  } else if (playerRoll === "scissors" && opponentRoll === "paper") {
-    gameStatus = "You win the round!";
-    setOpponentScore((prevOpponentScore) => prevOpponentScore - 1);
-  } else if (playerRoll === "scissors" && opponentRoll === "rock") {
-    gameStatus = "Opponent wins the round!";
-    setPlayerScore((prevPlayerScore) => prevPlayerScore - 1);
-  } else {
+  if (playerRoll === opponentRoll) {
     gameStatus = "Tie!";
+  } else if (
+    (playerRoll === "rock" && opponentRoll === "scissors") ||
+    (playerRoll === "paper" && opponentRoll === "rock") ||
+    (playerRoll === "scissors" && opponentRoll === "paper")
+  ) {
+    gameStatus = "You win the round!";
+    setOpponentScore((prevOpponentScore) => prevOpponentScore - 1);
+  } else {
+    gameStatus = "Opponent wins the round!";
+    setPlayerScore((prevPlayerScore) => prevPlayerScore - 1);
   }
 
   setGameStatus(gameStatus);
