@@ -1,4 +1,5 @@
 export function roll(
+  gameStatus,
   playerRolls,
   playerRoll,
   setPlayerRoll,
@@ -9,15 +10,13 @@ export function roll(
 ) {
   setPlayerRoll(playerRoll);
 
-  // Random number that defines opponent's choice
+  // Opponent's random choice
   const opponentRoll =
     playerRolls[Math.floor(Math.random() * playerRolls.length)];
 
   setOpponentRoll(opponentRoll);
 
-  let gameStatus;
-
-  // Game status and score based on the rolled number
+  // Game status and score
   if (playerRoll === opponentRoll) {
     gameStatus = "Tie!";
   } else if (
