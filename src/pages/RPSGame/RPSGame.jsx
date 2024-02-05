@@ -32,32 +32,19 @@ export default function RPSGame() {
   }, []);
 
   // Lives based on score
-  const hearts = function (score) {
-    return score === 3 ? (
-      <div className="rpsGame-heartsContainer">
-        <FaHeart />
-        <FaHeart />
-        <FaHeart />
-      </div>
-    ) : score === 2 ? (
-      <div className="rpsGame-heartsContainer">
-        <FaHeart />
-        <FaHeart />
-        <FaRegHeart />
-      </div>
-    ) : score === 1 ? (
-      <div className="rpsGame-heartsContainer">
-        <FaHeart />
-        <FaRegHeart />
-        <FaRegHeart />
-      </div>
-    ) : (
-      <div className="rpsGame-heartsContainer">
-        <FaRegHeart />
-        <FaRegHeart />
-        <FaRegHeart />
-      </div>
-    );
+  const hearts = function (lives, score) {
+    const hearts = new Array(lives);
+    hearts.fill(0);
+
+    for (let i = 0; i < score; i++) {
+      hearts[i] = 1;
+    }
+
+    const displayedHearts = hearts.map((heart, index) => {
+      return heart === 0 ? <FaRegHeart key={index} /> : <FaHeart key={index} />;
+    });
+
+    return <div className="rpsGame-heartsContainer">{displayedHearts}</div>;
   };
 
   // Image based on roll
@@ -120,7 +107,7 @@ export default function RPSGame() {
                 opponentScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
               }
             />
-            {hearts(playerScore)}
+            {hearts(3, playerScore)}
           </div>
           <div className="rpsGame-playersInfoContainerItem">
             <h3>Opponent</h3>
@@ -131,7 +118,7 @@ export default function RPSGame() {
                 playerScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
               }
             />
-            {hearts(opponentScore)}
+            {hearts(3, opponentScore)}
           </div>
         </div>
         <h1 className="rpsGame-heading">Rock, Paper, Scissors</h1>
