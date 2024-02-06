@@ -20,8 +20,10 @@ import Footer from "../../components/Footer/Footer";
 import "./rpsGame.css";
 
 export default function RPSGame() {
-  const [playerScore, setPlayerScore] = useState(3);
-  const [opponentScore, setOpponentScore] = useState(3);
+  const lives = 3;
+
+  const [playerScore, setPlayerScore] = useState(lives);
+  const [opponentScore, setOpponentScore] = useState(lives);
   const [gameStatus, setGameStatus] = useState("Choose to start");
   const [playerRoll, setPlayerRoll] = useState("question mark");
   const [opponentRoll, setOpponentRoll] = useState("question mark");
@@ -32,7 +34,7 @@ export default function RPSGame() {
   }, []);
 
   // Lives based on score
-  const hearts = function (lives, score) {
+  function hearts(lives, score) {
     const hearts = new Array(lives);
     hearts.fill(0);
 
@@ -44,11 +46,11 @@ export default function RPSGame() {
       return heart === 0 ? <FaRegHeart key={index} /> : <FaHeart key={index} />;
     });
 
-    return <div className="rpsGame-heartsContainer">{displayedHearts}</div>;
-  };
+    return displayedHearts;
+  }
 
   // Image based on roll
-  const rollImg = function (roll) {
+  function rollImg(roll) {
     return roll === "rock"
       ? rock
       : roll === "paper"
@@ -56,7 +58,7 @@ export default function RPSGame() {
       : roll === "scissors"
       ? scissors
       : questionMark;
-  };
+  }
 
   const playerRolls = ["rock", "paper", "scissors"];
 
@@ -107,7 +109,9 @@ export default function RPSGame() {
                 opponentScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
               }
             />
-            {hearts(3, playerScore)}
+            <div className="rpsGame-heartsContainer">
+              {hearts(lives, playerScore)}
+            </div>
           </div>
           <div className="rpsGame-playersInfoContainerItem">
             <h3>Opponent</h3>
@@ -118,7 +122,9 @@ export default function RPSGame() {
                 playerScore === 0 ? "rpsGame-winPortrait" : "rpsGame-portrait"
               }
             />
-            {hearts(3, opponentScore)}
+            <div className="rpsGame-heartsContainer">
+              {hearts(lives, opponentScore)}
+            </div>
           </div>
         </div>
         <h1 className="rpsGame-heading">Rock, Paper, Scissors</h1>
@@ -153,8 +159,8 @@ export default function RPSGame() {
         {(playerScore === 0 || opponentScore === 0) && (
           <button
             onClick={() => {
-              setPlayerScore(3);
-              setOpponentScore(3);
+              setPlayerScore(lives);
+              setOpponentScore(lives);
               setGameStatus("Choose to start");
               setPlayerRoll("question mark");
               setOpponentRoll("question mark");
