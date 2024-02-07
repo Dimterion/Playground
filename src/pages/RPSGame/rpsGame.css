@@ -87,6 +87,23 @@
   font-size: 1.25rem;
 }
 
+.rpsGame-form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 1.25rem;
+}
+
+.rpsGame-input {
+  width: 45px;
+  padding: 5px;
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  background: var(--tertiary);
+  color: var(--secondary);
+}
+
 .rpsGame-heading {
   margin: 10px;
   font-size: 2rem;

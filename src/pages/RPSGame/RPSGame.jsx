@@ -20,8 +20,7 @@ import Footer from "../../components/Footer/Footer";
 import "./rpsGame.css";
 
 export default function RPSGame() {
-  const lives = 3;
-
+  const [lives, setLives] = useState(3);
   const [playerScore, setPlayerScore] = useState(lives);
   const [opponentScore, setOpponentScore] = useState(lives);
   const [gameStatus, setGameStatus] = useState("Choose to start");
@@ -32,6 +31,16 @@ export default function RPSGame() {
   useEffect(() => {
     document.title = "Rock, Paper, Scissors";
   }, []);
+
+  function handleNumberChange(e) {
+    const parsedNumber = parseInt(e.target.value, 10);
+
+    if (!isNaN(parsedNumber) && parsedNumber > 0 && parsedNumber < 4) {
+      setLives(parsedNumber);
+      setPlayerScore(parsedNumber);
+      setOpponentScore(parsedNumber);
+    }
+  }
 
   // Lives based on score
   function hearts(lives, score) {
@@ -113,6 +122,18 @@ export default function RPSGame() {
               {hearts(lives, playerScore)}
             </div>
           </div>
+          <form className="rpsGame-form">
+            <label htmlFor="numberInput">Lives<br></br>(1-3)</label>
+            <input
+              id="numberInput"
+              type="number"
+              className="rpsGame-input"
+              value={lives}
+              max={3}
+              min={1}
+              onChange={handleNumberChange}
+            />
+          </form>
           <div className="rpsGame-playersInfoContainerItem">
             <h3>Opponent</h3>
             <img
