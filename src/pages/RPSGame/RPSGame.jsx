@@ -42,6 +42,18 @@ export default function RPSGame() {
     }
   }
 
+  function addLives() {
+    if (lives < 3) {
+      setLives((prevLives) => prevLives + 1);
+      setPlayerScore((prevScore) => prevScore + 1);
+      setOpponentScore((prevScore) => prevScore + 1);
+    } else {
+      setLives(1);
+      setPlayerScore(1);
+      setOpponentScore(1);
+    }
+  }
+
   // Lives based on score
   function hearts(lives, score) {
     const hearts = new Array(lives);
@@ -91,7 +103,7 @@ export default function RPSGame() {
         }}
         disabled={playerScore === 0 || opponentScore === 0}
         aria-label={playerRoll}
-        className="rpsGame-btn"
+        className="rpsGame-mainBtn"
       >
         {playerRoll === "rock" ? (
           <FaHandRock />
@@ -122,8 +134,10 @@ export default function RPSGame() {
               {hearts(lives, playerScore)}
             </div>
           </div>
-          <form className="rpsGame-form">
-            <label htmlFor="numberInput">Lives<br></br>(1-3)</label>
+          <div className="rpsGame-form">
+            <label htmlFor="numberInput">
+              Lives<br></br>(1-3)
+            </label>
             <input
               id="numberInput"
               type="number"
@@ -133,7 +147,10 @@ export default function RPSGame() {
               min={1}
               onChange={handleNumberChange}
             />
-          </form>
+            <button onClick={() => addLives()} className="rpsGame-subBtn">
+              +
+            </button>
+          </div>
           <div className="rpsGame-playersInfoContainerItem">
             <h3>Opponent</h3>
             <img
@@ -187,7 +204,7 @@ export default function RPSGame() {
               setOpponentRoll("question mark");
               setRollAnimation(true);
             }}
-            className="rpsGame-btn"
+            className="rpsGame-mainBtn"
           >
             <VscDebugRestart />
           </button>

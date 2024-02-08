@@ -104,6 +104,33 @@
   color: var(--secondary);
 }
 
+.rpsGame-subBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  margin: 10px auto;
+  background: var(--tertiary);
+  color: var(--secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.75s;
+}
+
+.rpsGame-subBtn:hover {
+  transform: scale(0.95);
+  background: var(--secondary);
+  color: var(--tertiary);
+  transition: 0.75s;
+}
+
+.rpsGame-subBtn:active {
+  transform: scale(0.8);
+}
+
 .rpsGame-heading {
   margin: 10px;
   font-size: 2rem;
@@ -159,7 +186,7 @@
   margin: 5px auto;
 }
 
-.rpsGame-btn {
+.rpsGame-mainBtn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -175,17 +202,17 @@
   transition: 0.75s;
 }
 
-.rpsGame-btn:hover {
+.rpsGame-mainBtn:hover {
   transform: scale(0.95);
   background: var(--secondary);
   color: var(--tertiary);
   transition: 0.75s;
 }
 
-.rpsGame-btn:active {
+.rpsGame-mainBtn:active {
   transform: scale(0.8);
 }
 
-.rpsGame-btn:disabled {
+.rpsGame-mainBtn:disabled {
   opacity: 0.5;
 }
