@@ -25,7 +25,8 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 5px 20px;
+  align-items: center;
+  margin: 5px 10px;
 }
 
 @media (min-width: 1200px) {
@@ -91,7 +92,6 @@
   display: flex;
   flex-flow: column nowrap;
   gap: 10px;
-  margin-top: 10px;
   font-size: 1.25rem;
 }
 
@@ -112,7 +112,7 @@
   height: 30px;
   border: 2px solid var(--secondary);
   border-radius: 5px;
-  margin: 10px auto;
+  margin: 5px auto;
   background: var(--tertiary);
   color: var(--secondary);
   font-size: 2rem;

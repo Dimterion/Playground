@@ -9,7 +9,8 @@
 ## Features
 
 - A standard Rock, Paper, Scissors game vs computer
-- Both players get 3 lives
+- Both players get 3 lives by default
+- The number of lives can be changed (1-3)
 - You win if you get your opponent to 0 lives
 - Once any player runs out of lives the game can be restarted
 

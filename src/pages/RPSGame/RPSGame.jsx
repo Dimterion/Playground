@@ -134,7 +134,7 @@ export default function RPSGame() {
               {hearts(lives, playerScore)}
             </div>
           </div>
-          <div className="rpsGame-form">
+          <form className="rpsGame-form">
             <label htmlFor="numberInput">
               Lives<br></br>(1-3)
             </label>
@@ -147,10 +147,15 @@ export default function RPSGame() {
               min={1}
               onChange={handleNumberChange}
             />
-            <button onClick={() => addLives()} className="rpsGame-subBtn">
-              +
+            <button
+              type="button"
+              aria-label="Change number of lives"
+              onClick={() => addLives()}
+              className="rpsGame-subBtn"
+            >
+              <FaHeart />
             </button>
-          </div>
+          </form>
           <div className="rpsGame-playersInfoContainerItem">
             <h3>Opponent</h3>
             <img
