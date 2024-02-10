@@ -28,22 +28,28 @@ export default function RPSGame() {
   const [opponentRoll, setOpponentRoll] = useState("question mark");
   const [rollAnimation, setRollAnimation] = useState(false);
 
+  const maxLives = 3;
+
   useEffect(() => {
     document.title = "Rock, Paper, Scissors";
   }, []);
 
-  function handleNumberChange(e) {
+  function handleLivesChange(e) {
     const parsedNumber = parseInt(e.target.value, 10);
 
-    if (!isNaN(parsedNumber) && parsedNumber > 0 && parsedNumber < 4) {
+    if (
+      !isNaN(parsedNumber) &&
+      parsedNumber > 0 &&
+      parsedNumber < maxLives + 1
+    ) {
       setLives(parsedNumber);
       setPlayerScore(parsedNumber);
       setOpponentScore(parsedNumber);
     }
   }
 
-  function addLives() {
-    if (lives < 3) {
+  function livesNumber(lives) {
+    if (lives < maxLives) {
       setLives((prevLives) => prevLives + 1);
       setPlayerScore((prevScore) => prevScore + 1);
       setOpponentScore((prevScore) => prevScore + 1);
@@ -143,14 +149,14 @@ export default function RPSGame() {
               type="number"
               className="rpsGame-input"
               value={lives}
-              max={3}
+              max={maxLives}
               min={1}
-              onChange={handleNumberChange}
+              onChange={handleLivesChange}
             />
             <button
               type="button"
               aria-label="Change number of lives"
-              onClick={() => addLives()}
+              onClick={() => livesNumber(lives)}
               className="rpsGame-subBtn"
             >
               <FaHeart />
