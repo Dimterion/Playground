@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 import { VscDebugRestart } from "react-icons/vsc";
-import { roll } from "./rpsGameUtils";
+import { handleInputLives, changeLives, roll } from "./rpsGameUtils";
 import player from "../../assets/RPSGame/player.jpg";
 import opponent from "../../assets/RPSGame/opponent.jpg";
 import rock from "../../assets/RPSGame/rock.jpg";
@@ -33,32 +33,6 @@ export default function RPSGame() {
   useEffect(() => {
     document.title = "Rock, Paper, Scissors";
   }, []);
-
-  function handleLivesChange(e) {
-    const parsedNumber = parseInt(e.target.value, 10);
-
-    if (
-      !isNaN(parsedNumber) &&
-      parsedNumber > 0 &&
-      parsedNumber < maxLives + 1
-    ) {
-      setLives(parsedNumber);
-      setPlayerScore(parsedNumber);
-      setOpponentScore(parsedNumber);
-    }
-  }
-
-  function livesNumber(lives) {
-    if (lives < maxLives) {
-      setLives((prevLives) => prevLives + 1);
-      setPlayerScore((prevScore) => prevScore + 1);
-      setOpponentScore((prevScore) => prevScore + 1);
-    } else {
-      setLives(1);
-      setPlayerScore(1);
-      setOpponentScore(1);
-    }
-  }
 
   // Lives based on score
   function hearts(lives, score) {
@@ -151,12 +125,28 @@ export default function RPSGame() {
               value={lives}
               max={maxLives}
               min={1}
-              onChange={handleLivesChange}
+              onChange={(e) =>
+                handleInputLives(
+                  e,
+                  maxLives,
+                  setLives,
+                  setPlayerScore,
+                  setOpponentScore
+                )
+              }
             />
             <button
               type="button"
               aria-label="Change number of lives"
-              onClick={() => livesNumber(lives)}
+              onClick={() =>
+                changeLives(
+                  lives,
+                  maxLives,
+                  setLives,
+                  setPlayerScore,
+                  setOpponentScore
+                )
+              }
               className="rpsGame-subBtn"
             >
               <FaHeart />
