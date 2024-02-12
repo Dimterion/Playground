@@ -4,7 +4,11 @@ export function handleInputLives(
   maxLives,
   setLives,
   setPlayerScore,
-  setOpponentScore
+  setOpponentScore,
+  setGameStatus,
+  setPlayerRoll,
+  setOpponentRoll,
+  setRollAnimation
 ) {
   const parsedNumber = parseInt(e.target.value, 10);
 
@@ -12,6 +16,10 @@ export function handleInputLives(
     setLives(parsedNumber);
     setPlayerScore(parsedNumber);
     setOpponentScore(parsedNumber);
+    setGameStatus("Choose to start");
+    setPlayerRoll("question mark");
+    setOpponentRoll("question mark");
+    setRollAnimation(true);
   }
 }
 
@@ -21,7 +29,11 @@ export function changeLives(
   maxLives,
   setLives,
   setPlayerScore,
-  setOpponentScore
+  setOpponentScore,
+  setGameStatus,
+  setPlayerRoll,
+  setOpponentRoll,
+  setRollAnimation
 ) {
   if (lives < maxLives) {
     setLives((prevLives) => prevLives + 1);
@@ -32,6 +44,11 @@ export function changeLives(
     setPlayerScore(1);
     setOpponentScore(1);
   }
+
+  setGameStatus("Choose to start");
+  setPlayerRoll("question mark");
+  setOpponentRoll("question mark");
+  setRollAnimation(true);
 }
 
 export function roll(

@@ -20,6 +20,8 @@ import Footer from "../../components/Footer/Footer";
 import "./rpsGame.css";
 
 export default function RPSGame() {
+  const maxLives = 3;
+
   const [lives, setLives] = useState(3);
   const [playerScore, setPlayerScore] = useState(lives);
   const [opponentScore, setOpponentScore] = useState(lives);
@@ -27,8 +29,6 @@ export default function RPSGame() {
   const [playerRoll, setPlayerRoll] = useState("question mark");
   const [opponentRoll, setOpponentRoll] = useState("question mark");
   const [rollAnimation, setRollAnimation] = useState(false);
-
-  const maxLives = 3;
 
   useEffect(() => {
     document.title = "Rock, Paper, Scissors";
@@ -131,7 +131,11 @@ export default function RPSGame() {
                   maxLives,
                   setLives,
                   setPlayerScore,
-                  setOpponentScore
+                  setOpponentScore,
+                  setGameStatus,
+                  setPlayerRoll,
+                  setOpponentRoll,
+                  setRollAnimation
                 )
               }
             />
@@ -144,7 +148,11 @@ export default function RPSGame() {
                   maxLives,
                   setLives,
                   setPlayerScore,
-                  setOpponentScore
+                  setOpponentScore,
+                  setGameStatus,
+                  setPlayerRoll,
+                  setOpponentRoll,
+                  setRollAnimation
                 )
               }
               className="rpsGame-subBtn"
