@@ -37,8 +37,8 @@ export function changeLives(
 ) {
   if (lives < maxLives) {
     setLives((prevLives) => prevLives + 1);
-    setPlayerScore((prevScore) => prevScore + 1);
-    setOpponentScore((prevScore) => prevScore + 1);
+    setPlayerScore(lives + 1);
+    setOpponentScore(lives + 1);
   } else {
     setLives(1);
     setPlayerScore(1);

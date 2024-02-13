@@ -5,6 +5,7 @@
 }
 
 .rpsGame-section {
+  margin-top: 1rem;
   text-align: center;
   animation: rpsGame-section--appear 1s ease-in-out;
 }
@@ -132,7 +133,7 @@
 }
 
 .rpsGame-heading {
-  margin: 10px;
+  margin: 2rem;
   font-size: 2rem;
   font-style: italic;
 }
