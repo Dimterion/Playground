@@ -20,19 +20,21 @@ import Footer from "../../components/Footer/Footer";
 import "./rpsGame.css";
 
 export default function RPSGame() {
+  // Page title
+  useEffect(() => {
+    document.title = "Rock, Paper, Scissors";
+  }, []);
+
+  // Default number of lives
   const maxLives = 3;
 
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(maxLives);
   const [playerScore, setPlayerScore] = useState(lives);
   const [opponentScore, setOpponentScore] = useState(lives);
   const [gameStatus, setGameStatus] = useState("Choose to start");
   const [playerRoll, setPlayerRoll] = useState("question mark");
   const [opponentRoll, setOpponentRoll] = useState("question mark");
   const [rollAnimation, setRollAnimation] = useState(false);
-
-  useEffect(() => {
-    document.title = "Rock, Paper, Scissors";
-  }, []);
 
   // Lives based on score
   function hearts(lives, score) {
@@ -50,7 +52,7 @@ export default function RPSGame() {
     return displayedHearts;
   }
 
-  // Image based on roll
+  // Rolls images
   function rollImg(roll) {
     return roll === "rock"
       ? rock
@@ -61,9 +63,9 @@ export default function RPSGame() {
       : questionMark;
   }
 
+  // Rolls options
   const playerRolls = ["rock", "paper", "scissors"];
 
-  // Buttons to choose player's option
   const buttons = playerRolls.map((playerRoll) => {
     return (
       <button
@@ -116,7 +118,7 @@ export default function RPSGame() {
           </div>
           <form className="rpsGame-form">
             <label htmlFor="numberInput">
-              Lives<br></br>(1-3)
+              Lives<br></br>(1-{maxLives})
             </label>
             <input
               id="numberInput"
