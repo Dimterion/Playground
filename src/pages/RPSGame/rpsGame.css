@@ -95,6 +95,12 @@
   font-size: 1.25rem;
 }
 
+@media (max-width: 600px) {
+  .rpsGame-heartsContainer {
+    font-size: 1rem;
+  }
+}
+
 .rpsGame-form {
   display: flex;
   flex-flow: column nowrap;
@@ -139,7 +145,7 @@
 }
 
 .rpsGame-heading {
-  margin: 1rem;
+  margin: 0.75rem;
   font-size: 2rem;
   font-style: italic;
 }
@@ -186,6 +192,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   margin: 15px auto 10px;
 }
 
