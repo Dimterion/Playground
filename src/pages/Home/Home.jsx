@@ -12,6 +12,9 @@ export default function Home() {
       <Link to="/rps-game" className="home-link">
         Rock, Paper, Scissors
       </Link>
+      <Link to="/clock" className="home-link">
+        Clock
+      </Link>
     </section>
   );
 }
