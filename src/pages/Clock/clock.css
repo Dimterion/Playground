@@ -1,4 +1,5 @@
 .clock-section {
+  position: relative;
   width: 200px;
   max-width: 90vw;
   height: 200px;
@@ -7,6 +8,21 @@
   border: 5px solid var(--secondary);
   border-radius: 50%;
   margin: 5vh auto;
+  animation: clock-section--appear 1.5s ease-in-out;
+}
+
+@keyframes clock-section--appear {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .clock-spanContainer {
@@ -24,13 +40,13 @@
 .clock-spanContainer span:nth-child(2) {
   left: 5%;
   width: 45%;
-  height: 3px;
+  height: 4px;
 }
 
 .clock-spanContainer span:nth-child(3) {
-  left: 10%;
-  width: 40%;
-  height: 4px;
+  left: 15%;
+  width: 35%;
+  height: 5px;
 }
 
 .clock-span {
@@ -41,4 +57,15 @@
   transform-origin: 100%;
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0.1, 2.5, 0.55, 1);
+}
+
+.clock-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--secondary);
 }

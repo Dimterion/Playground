@@ -38,6 +38,7 @@ function Clock() {
           <span className="clock-span" ref={minutesRef}></span>
           <span className="clock-span" ref={hoursRef}></span>
         </div>
+        <div className="clock-dot"></div>
       </section>
     </main>
   );
