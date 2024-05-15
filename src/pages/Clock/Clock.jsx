@@ -13,15 +13,39 @@ function Clock() {
 
       const seconds = now.getSeconds();
       const secondsDegrees = (seconds / 60) * 360 + 90;
+
+      if (seconds === 0) {
+        secondsRef.current.style.transition = `none`;
+      } else {
+        secondsRef.current.style.transition = `all 0.05s`;
+      }
+
       secondsRef.current.style.transform = `rotate(${secondsDegrees}deg)`;
+      secondsRef.current.style.transitionTimingFunction = `cubic-bezier(0.1, 2.5, 0.55, 1)`;
 
       const minutes = now.getMinutes();
       const minutesDegrees = (minutes / 60) * 360 + (seconds / 60) * 6 + 90;
+
+      if (minutes === 0) {
+        minutesRef.current.style.transition = `none`;
+      } else {
+        minutesRef.current.style.transition = `all 0.05s`;
+      }
+
       minutesRef.current.style.transform = `rotate(${minutesDegrees}deg)`;
+      minutesRef.current.style.transitionTimingFunction = `cubic-bezier(0.1, 2.5, 0.55, 1)`;
 
       const hours = now.getHours();
       const hoursDegrees = (hours / 12) * 360 + (minutes / 60) * 30 + 90;
+
+      if (hours === 0) {
+        hoursRef.current.style.transition = `none`;
+      } else {
+        hoursRef.current.style.transition = `all 0.05s`;
+      }
+
       hoursRef.current.style.transform = `rotate(${hoursDegrees}deg)`;
+      hoursRef.current.style.transitionTimingFunction = `cubic-bezier(0.1, 2.5, 0.55, 1)`;
     }
 
     const intervalId = setInterval(setTime, 1000);
