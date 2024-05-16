@@ -63,6 +63,10 @@ function Clock() {
           <span className="clock-span" ref={hoursRef}></span>
         </div>
         <div className="clock-dot"></div>
+        <div className="clock-topLine"></div>
+        <div className="clock-rightLine"></div>
+        <div className="clock-bottomLine"></div>
+        <div className="clock-leftLine"></div>
       </section>
     </main>
   );

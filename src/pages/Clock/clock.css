@@ -8,6 +8,7 @@
   border: 5px solid var(--secondary);
   border-radius: 50%;
   margin: 5vh auto;
+  background: rgba(0, 0, 0, 0.5);
   animation: clock-section--appear 1.5s ease-in-out;
 }
 
@@ -67,5 +68,49 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  background: var(--secondary);
+}
+
+.clock-topLine {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 15px;
+  background: var(--secondary);
+}
+
+.clock-rightLine {
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 2px;
+  background: var(--secondary);
+}
+
+.clock-bottomLine {
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 15px;
+  background: var(--secondary);
+}
+
+.clock-leftLine {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 2px;
   background: var(--secondary);
 }
