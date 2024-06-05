@@ -15,6 +15,9 @@ export default function Home() {
       <Link to="/clock" className="home-link">
         Clock
       </Link>
+      <Link to="/image-editor" className="home-link">
+        Image editor
+      </Link>
     </section>
   );
 }

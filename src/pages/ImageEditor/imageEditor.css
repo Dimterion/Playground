@@ -1,0 +1,40 @@
+.imageEditor-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+  animation: imageEditor--appear 1.5s ease-in-out;
+}
+
+@keyframes imageEditor--appear {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.imageEditor-article {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.imageEditor-article label {
+  font-weight: bold;
+}
+
+.imageEditor-img {
+  width: 95vw;
+  max-width: 50rem;
+}
