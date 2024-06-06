@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import "./imageEditor.css";
 
 function ImageEditor() {
@@ -116,6 +117,7 @@ function ImageEditor() {
           }
         />
       </section>
+      <Footer />
     </main>
   );
 }

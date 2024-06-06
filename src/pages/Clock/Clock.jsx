@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import "./clock.css";
 
 function Clock() {
@@ -68,6 +69,7 @@ function Clock() {
         <div className="clock-bottomLine"></div>
         <div className="clock-leftLine"></div>
       </section>
+      <Footer />
     </main>
   );
 }
