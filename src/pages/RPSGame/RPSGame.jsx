@@ -221,7 +221,10 @@ export default function RPSGame() {
           </button>
         )}
       </section>
-      <Footer />
+      <Footer
+        link="https://medium.com/@dimterion/rock-paper-scissors-game-with-react-846cef35711d"
+        linkName="Description"
+      />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import "./footer.css";
 
 export default function Footer({ link, linkName }) {
   return (
-    <footer>
+    <footer className="footer">
       <a
         href={link}
         target="_blank"
