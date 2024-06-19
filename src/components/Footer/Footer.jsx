@@ -2,16 +2,24 @@ import PropTypes from "prop-types";
 import { FaRegCopyright } from "react-icons/fa";
 import "./footer.css";
 
-export default function Footer({ link, linkName }) {
+export default function Footer({ descriptionLink, repoLink }) {
   return (
     <footer className="footer">
       <a
-        href={link}
+        href={descriptionLink}
         target="_blank"
         rel="noopener noreferrer"
         className="footer-link"
       >
-        {linkName}
+        Description
+      </a>
+      <a
+        href={repoLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-link"
+      >
+        Repo
       </a>
       <a
         href="https://github.com/Dimterion"
@@ -27,6 +35,6 @@ export default function Footer({ link, linkName }) {
 }
 
 Footer.propTypes = {
-  link: PropTypes.string,
-  linkName: PropTypes.string,
+  descriptionLink: PropTypes.string,
+  repoLink: PropTypes.string,
 };
