@@ -69,7 +69,10 @@ function Clock() {
         <div className="clock-bottomLine"></div>
         <div className="clock-leftLine"></div>
       </section>
-      <Footer descriptionLink="https://medium.com/@dimterion/clock-with-reactjs-css-c2b56fbabd2c" />
+      <Footer
+        descriptionLink="https://medium.com/@dimterion/clock-with-reactjs-css-c2b56fbabd2c"
+        repoLink="https://github.com/Dimterion/Playground/tree/main/src/pages/Clock"
+      />
     </main>
   );
 }

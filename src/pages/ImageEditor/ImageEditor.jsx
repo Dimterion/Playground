@@ -117,7 +117,10 @@ function ImageEditor() {
           }
         />
       </section>
-      <Footer descriptionLink="https://medium.com/@dimterion/simple-image-editor-with-react-3d681dd88999" />
+      <Footer
+        descriptionLink="https://medium.com/@dimterion/simple-image-editor-with-react-3d681dd88999"
+        repoLink="https://github.com/Dimterion/Playground/tree/main/src/pages/ImageEditor"
+      />
     </main>
   );
 }
