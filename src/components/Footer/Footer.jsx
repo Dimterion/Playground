@@ -5,22 +5,24 @@ import "./footer.css";
 export default function Footer({ descriptionLink, repoLink }) {
   return (
     <footer className="footer">
-      <a
-        href={descriptionLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="footer-link"
-      >
-        Description
-      </a>
-      <a
-        href={repoLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="footer-link"
-      >
-        Repo
-      </a>
+      <section>
+        <a
+          href={descriptionLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link"
+        >
+          Description
+        </a>
+        <a
+          href={repoLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-link"
+        >
+          Repo
+        </a>
+      </section>
       <a
         href="https://github.com/Dimterion"
         target="_blank"
