@@ -12,7 +12,7 @@ export default function Footer({ descriptionLink, repoLink }) {
           rel="noopener noreferrer"
           className="footer-link"
         >
-          Description
+          {"<< "}Description{" >>"}
         </a>
         <a
           href={repoLink}
@@ -20,7 +20,7 @@ export default function Footer({ descriptionLink, repoLink }) {
           rel="noopener noreferrer"
           className="footer-link"
         >
-          Repo
+          {"<< "}Repo{" >>"}
         </a>
       </section>
       <a
