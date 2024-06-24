@@ -66,6 +66,7 @@ function ImageEditor() {
             type="url"
             name="link"
             placeholder="Paste your image link here."
+            className="imageEditor-input"
             value={
               link ===
               "https://raw.githubusercontent.com/Dimterion/Profile-site/master/src/assets/images/placeholderImg.jpg"
@@ -101,6 +102,7 @@ function ImageEditor() {
             id="base"
             type="color"
             name="base"
+            className="imageEditor-input"
             value={baseColor}
             onChange={handleInputChange}
           />
