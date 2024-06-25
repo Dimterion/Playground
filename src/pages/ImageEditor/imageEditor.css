@@ -38,6 +38,7 @@
   padding: 2px 5px;
   border: none;
   border-radius: 5px;
+  margin: 5px;
   background: var(--secondary);
 }
 

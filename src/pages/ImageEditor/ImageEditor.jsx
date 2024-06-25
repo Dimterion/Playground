@@ -80,6 +80,7 @@ function ImageEditor() {
             id="spacing"
             type="range"
             name="spacing"
+            className="imageEditor-input"
             min="10"
             max="200"
             value={spacing}
@@ -91,6 +92,7 @@ function ImageEditor() {
             id="blur"
             type="range"
             name="blur"
+            className="imageEditor-input"
             min="0"
             max="25"
             value={blur}
