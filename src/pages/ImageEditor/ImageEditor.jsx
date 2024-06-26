@@ -59,6 +59,7 @@ function ImageEditor() {
     <main>
       <Header />
       <section className="imageEditor-section">
+        <h1 className="imageEditor-heading">Image Editor</h1>
         <article className="imageEditor-article">
           <label htmlFor="link">Image link:</label>
           <input
