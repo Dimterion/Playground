@@ -26,6 +26,13 @@
   }
 }
 
+.clock-heading {
+  margin: 0.75rem;
+  font-size: 2rem;
+  font-style: italic;
+  text-align: center;
+}
+
 .clock-spanContainer {
   width: 100%;
   height: 100%;

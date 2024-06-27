@@ -57,6 +57,7 @@ function Clock() {
   return (
     <main>
       <Header />
+      <h1 className="clock-heading">Clock</h1>
       <section className="clock-section">
         <div className="clock-spanContainer">
           <span className="clock-span" ref={secondsRef}></span>
