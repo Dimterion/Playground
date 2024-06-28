@@ -23,7 +23,7 @@
 }
 
 .imageEditor-heading {
-  margin: 0.75rem;
+  margin: 0.25rem;
   font-size: 2rem;
   font-style: italic;
 }
@@ -34,6 +34,13 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+@media (max-width: 950px) {
+  .imageEditor-article {
+    flex-flow: column wrap;
+    gap: 0.25rem;
+  }
 }
 
 .imageEditor-article label {
