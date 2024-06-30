@@ -9,6 +9,7 @@ function ImageEditor() {
   );
   const [spacing, setSpacing] = useState(5);
   const [blur, setBlur] = useState(0);
+  const [border, setBorder] = useState(0);
   const [baseColor, setBaseColor] = useState("var(--secondary)");
 
   // const handleSpacingChange = (e) => {
@@ -32,6 +33,8 @@ function ImageEditor() {
       ? setSpacing(value)
       : name === "blur"
       ? setBlur(value)
+      : name === "border"
+      ? setBorder(value)
       : setBaseColor(value);
 
     // switch (name) {
@@ -51,8 +54,9 @@ function ImageEditor() {
 
   const imageStyle = {
     padding: `${spacing}px`,
-    background: baseColor,
     filter: `blur(${blur}px)`,
+    borderRadius: `${border}px`,
+    background: baseColor,
   };
 
   return (
@@ -97,6 +101,18 @@ function ImageEditor() {
             min="0"
             max="25"
             value={blur}
+            onChange={handleInputChange}
+            data-sizing="px"
+          />
+          <label htmlFor="border">Border:</label>
+          <input
+            id="border"
+            type="range"
+            name="border"
+            className="imageEditor-input"
+            min="0"
+            max="25"
+            value={border}
             onChange={handleInputChange}
             data-sizing="px"
           />

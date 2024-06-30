@@ -36,7 +36,7 @@
   gap: 0.5rem;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
   .imageEditor-article {
     flex-flow: column wrap;
     gap: 0.25rem;
