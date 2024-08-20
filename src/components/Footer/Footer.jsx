@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { FaRegCopyright } from "react-icons/fa";
 import "./footer.css";
 
 export default function Footer({ descriptionLink, repoLink }) {
@@ -29,8 +28,7 @@ export default function Footer({ descriptionLink, repoLink }) {
         rel="noopener noreferrer"
         className="footer-link"
       >
-        <FaRegCopyright />
-        Dimterion
+        {new Date().getFullYear()} &copy;Dimterion
       </a>
     </footer>
   );
