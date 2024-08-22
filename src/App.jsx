@@ -5,6 +5,7 @@ import CardsGame from "./pages/CardsGame/CardsGame";
 import Clock from "./pages/Clock/Clock";
 import ImageEditor from "./pages/ImageEditor/ImageEditor";
 import Weather from "./pages/Weather/Weather";
+import ExpenseTracker from "./pages/ExpenseTracker/ExpenseTracker";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/clock" element={<Clock />} />
         <Route path="/image-editor" element={<ImageEditor />} />
         <Route path="/weather" element={<Weather />} />
+        <Route path="/expense-tracker" element={<ExpenseTracker />} />
       </Routes>
     </BrowserRouter>
   );

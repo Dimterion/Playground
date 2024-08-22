@@ -1,0 +1,9 @@
+.expenseTracker-main,
+.expenseTracker-article {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  max-width: 200px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
