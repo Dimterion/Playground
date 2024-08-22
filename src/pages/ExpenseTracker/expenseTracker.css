@@ -7,3 +7,24 @@
   margin: 1.5rem auto;
   text-align: center;
 }
+
+.expenseTracker-main section article {
+  margin-top: 1rem;
+}
+
+.expenseTracker-main button,
+.expenseTracker-article input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.expenseTracker-main button {
+  border: 3px solid var(--secondary);
+  margin: 10px auto;
+  background: var(--tertiary);
+  color: var(--secondary);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@ function ExpenseTracker() {
 
   function handleChange(e) {
     const { name, value } = e.target;
+
     setTransaction((prevTransaction) => ({
       ...prevTransaction,
       [name]: value,
@@ -17,12 +18,15 @@ function ExpenseTracker() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const amount = parseFloat(transaction.amount);
+
     if (amount > 0) {
       setIncome((prevIncome) => prevIncome + amount);
     } else {
       setExpense((prevExpense) => prevExpense + Math.abs(amount));
     }
+
     setBalance((prevBalance) => prevBalance + amount);
     setTransaction({ amount: 0 });
   }
