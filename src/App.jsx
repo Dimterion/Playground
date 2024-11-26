@@ -6,6 +6,8 @@ import Clock from "./pages/Clock/Clock";
 import ImageEditor from "./pages/ImageEditor/ImageEditor";
 import Weather from "./pages/Weather/Weather";
 import ExpenseTracker from "./pages/ExpenseTracker/ExpenseTracker";
+import Post from "./pages/Post/Post";
+import Error from "./components/Error";
 
 export default function App() {
   return (
@@ -18,6 +20,7 @@ export default function App() {
         <Route path="/image-editor" element={<ImageEditor />} />
         <Route path="/weather" element={<Weather />} />
         <Route path="/expense-tracker" element={<ExpenseTracker />} />
+        <Route path="post/:filename" element={<Post />} errorElement={<Error />} />
       </Routes>
     </BrowserRouter>
   );
