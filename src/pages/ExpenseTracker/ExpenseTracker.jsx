@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./expenseTracker.css";
 
 function ExpenseTracker() {
-  const [balance, setBalance] = useState(0);
+  const [balance, setBalance] = useState(() => {
+    const savedBalance = localStorage.getItem("balance");
+
+    return savedBalance ? JSON.parse(savedBalance) : 0;
+  });
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
   const [transaction, setTransaction] = useState({ amount: 0 });
+
+  useEffect(() => {
+    localStorage.setItem("balance", JSON.stringify(balance));
+  }, [balance]);
 
   function handleChange(e) {
     const { name, value } = e.target;
