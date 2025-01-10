@@ -1,0 +1,34 @@
+.gallery-wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.gallery-section {
+  display: flex;
+  gap: 1rem;
+  max-width: 80vw;
+}
+
+.gallery-figure {
+  border-radius: 1.5rem;
+  cursor: pointer;
+  flex: 0.25;
+  height: 20rem;
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  width: 5rem;
+}
+
+.gallery-figure:hover {
+  border-radius: 1rem;
+  flex: 1;
+}
+
+.gallery-figure img {
+  height: 20rem;
+  left: -6rem;
+  object-fit: cover;
+  position: relative;
+}
