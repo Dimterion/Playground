@@ -110,4 +110,43 @@
 .header-navigation > li:hover .header-dropdown,
 .header-navigation > li:focus-within .header-dropdown {
   display: block;
+}
+
+.header-dropdown__wrapper {
+  left: 0;
+  padding-top: 3.75rem;
+  position: absolute;
+  top: 0;
+}
+
+.header-dropdown {
+  animation: fadeIn 0.2s ease-in-out;
+  background: gray;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  display: none;
+  max-width: 36rem;
+  padding: 0.5rem;
+  width: 100%;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.99) translateY(-0.7em);
+    transform-origin: top;
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.header-ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  width: 100%;
 } */
