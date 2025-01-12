@@ -34,6 +34,7 @@
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
   display: flex;
   grid-area: 1.5rem;
+  height: 64px;
   justify-content: space-between;
   padding: 0 1rem;
   position: fixed;
@@ -54,7 +55,7 @@
 
 .header-navigation {
   align-items: center;
-  background-color: #000;
+  background: #000;
   display: flex;
   flex-direction: row;
   gap: 1rem;
