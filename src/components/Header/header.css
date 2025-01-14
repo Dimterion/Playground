@@ -1,34 +1,4 @@
-.header-link {
-  margin: 5px;
-  color: var(--secondary);
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.5s;
-  animation: header-link--appear 1s ease-in-out;
-}
-
-@keyframes header-link--appear {
-  0% {
-    opacity: 0;
-  }
-
-  70% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.header-link:hover {
-  color: var(--tertiary);
-  transition: 0.5s;
-}
-
-/* Header */
-/* .header-menu__wrapper {
+.header-menu__wrapper {
   --header-primary__color: #000;
   --header-secondary__color: #333;
   --header-tertiary__color: #fff;
@@ -169,4 +139,4 @@
 
 .header-ul li:hover p {
   color: var(--header-tertiary__color);
-} */
+}

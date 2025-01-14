@@ -15,8 +15,8 @@ import rock from "../../assets/RPSGame/rock.jpg";
 import paper from "../../assets/RPSGame/paper.jpg";
 import scissors from "../../assets/RPSGame/scissors.jpg";
 import questionMark from "../../assets/RPSGame/questionMark.jpg";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/ui/Header/Header";
+import Footer from "../../components/ui/Footer/Footer";
 import "./rpsGame.css";
 
 export default function RPSGame() {

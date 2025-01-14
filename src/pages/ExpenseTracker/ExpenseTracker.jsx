@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./expenseTracker.css";
+import Header from "../../components/ui/Header/Header";
+import Footer from "../../components/ui/Footer/Footer";
 
 function ExpenseTracker() {
   const [balance, setBalance] = useState(() => {
@@ -41,6 +43,7 @@ function ExpenseTracker() {
 
   return (
     <main className="expenseTracker-main">
+      <Header />
       <section>
         <h3>Your Balance:</h3>
         <h2>${balance.toFixed(2)}</h2>
@@ -77,6 +80,7 @@ function ExpenseTracker() {
           </button>
         </form>
       </section>
+      <Footer />
     </main>
   );
 }
