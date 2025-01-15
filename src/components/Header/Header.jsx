@@ -37,33 +37,6 @@ export default function Header() {
                 </div>
               </div>
             </li>
-            <li>
-              <button>Menu</button>
-              <div className="header-dropdown__wrapper">
-                <div className="header-dropdown">
-                  <ul className="header-ul">
-                    <li>
-                      <div className="header-item-title">
-                        <h3>Item</h3>
-                        <p>Item description</p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="header-item-title">
-                        <h3>Item</h3>
-                        <p>Item description</p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="header-item-title">
-                        <h3>Item</h3>
-                        <p>Item description</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
           </ul>
         </nav>
       </div>
