@@ -1,0 +1,21 @@
+[data-notification-count] {
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+[data-notification-count]::before {
+  align-items: center;
+  background: red;
+  border-radius: 50%;
+  color: white;
+  content: attr(data-notification-count);
+  display: flex;
+  height: 1.5em;
+  justify-content: center;
+  position: absolute;
+  right: -0.75em;
+  top: -0.75em;
+  width: 1.5em;
+}
