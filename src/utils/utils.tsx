@@ -1,16 +1,15 @@
 import FormattedText from "../components/FormattedText/FormattedText";
 
 export const formatText = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*|__.*?__|_[^_]*?_|\*.*?\*)/g);
+  if (!text) return null;
+
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);
+
   const textStyles = {
     bold: "formattedText-bold",
     italic: "formattedText-italic",
     boldAndItalic: "formattedText-bold formattedText-italic",
   };
-
-  if (!text) {
-    return null;
-  }
 
   return parts.map((part, index) => {
     if (
@@ -20,11 +19,9 @@ export const formatText = (text: string) => {
       part !== "**"
     ) {
       return (
-        <FormattedText
-          key={index}
-          style={textStyles.bold}
-          children={part.slice(2, -2)}
-        />
+        <FormattedText key={index} style={textStyles.bold}>
+          {part.slice(2, -2)}
+        </FormattedText>
       );
     }
 
@@ -35,11 +32,10 @@ export const formatText = (text: string) => {
       part !== "**"
     ) {
       return (
-        <FormattedText
-          key={index}
-          style={textStyles.italic}
-          children={part.slice(1, -1)}
-        />
+        <FormattedText key={index} style={textStyles.italic}>
+          {" "}
+          {part.slice(1, -1)}
+        </FormattedText>
       );
     }
 
@@ -50,14 +46,16 @@ export const formatText = (text: string) => {
       part !== "**"
     ) {
       return (
-        <FormattedText
-          key={index}
-          style={textStyles.boldAndItalic}
-          children={part.slice(1, -1)}
-        />
+        <FormattedText key={index} style={textStyles.boldAndItalic}>
+          {part.slice(1, -1)}
+        </FormattedText>
       );
     }
 
-    return <FormattedText key={index} style="" children={part} />;
+    return (
+      <FormattedText key={index} style="">
+        {part}
+      </FormattedText>
+    );
   });
 };
