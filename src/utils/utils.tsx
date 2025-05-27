@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 import FormattedText from "../components/FormattedText/FormattedText";
 
-export const formatText = (text: string) => {
+export const formatText = (text: string): ReactNode => {
   if (!text) return null;
 
   const textParts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);

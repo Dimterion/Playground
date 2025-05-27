@@ -1,6 +1,11 @@
 import "./formattedText.css";
 
-function FormattedText({ style, children }) {
+interface FormattedTextProps {
+  style: string;
+  children: React.ReactNode;
+}
+
+function FormattedText({ style, children }: FormattedTextProps) {
   return <span className={style}>{children}</span>;
 }
 
