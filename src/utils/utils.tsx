@@ -3,34 +3,37 @@ import FormattedText from "../components/FormattedText/FormattedText";
 export const formatText = (text: string) => {
   if (!text) return null;
 
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);
+  const textParts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);
+  const boldRegex = /^\*\*[^*]+\*\*$/;
+  const italicRegex = /^\*[^*]+\*$/;
+  const boldAndItalicRegex = /^_[^_]+_$/;
 
-  const textStyles = {
+  const textStyle = {
     bold: "formattedText-bold",
     italic: "formattedText-italic",
     boldAndItalic: "formattedText-bold formattedText-italic",
   };
 
-  return parts.map((part, index) => {
-    if (/^\*\*[^*]+\*\*$/.test(part)) {
+  return textParts.map((part, index) => {
+    if (boldRegex.test(part)) {
       return (
-        <FormattedText key={index} style={textStyles.bold}>
+        <FormattedText key={index} style={textStyle.bold}>
           {part.slice(2, -2)}
         </FormattedText>
       );
     }
 
-    if (/^\*[^*]+\*$/.test(part)) {
+    if (italicRegex.test(part)) {
       return (
-        <FormattedText key={index} style={textStyles.italic}>
+        <FormattedText key={index} style={textStyle.italic}>
           {part.slice(1, -1)}
         </FormattedText>
       );
     }
 
-    if (/^_[^_]+_$/.test(part)) {
+    if (boldAndItalicRegex.test(part)) {
       return (
-        <FormattedText key={index} style={textStyles.boldAndItalic}>
+        <FormattedText key={index} style={textStyle.boldAndItalic}>
           {part.slice(1, -1)}
         </FormattedText>
       );
