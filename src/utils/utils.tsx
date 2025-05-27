@@ -16,6 +16,7 @@ export const formatText = (text: string): ReactNode => {
   };
 
   return textParts.map((part, index) => {
+    // Bold text
     if (boldRegex.test(part)) {
       return (
         <FormattedText key={index} style={textStyle.bold}>
@@ -24,6 +25,7 @@ export const formatText = (text: string): ReactNode => {
       );
     }
 
+    // Italic text
     if (italicRegex.test(part)) {
       return (
         <FormattedText key={index} style={textStyle.italic}>
@@ -32,6 +34,7 @@ export const formatText = (text: string): ReactNode => {
       );
     }
 
+    // Bold and italic text
     if (boldAndItalicRegex.test(part)) {
       return (
         <FormattedText key={index} style={textStyle.boldAndItalic}>
@@ -40,10 +43,7 @@ export const formatText = (text: string): ReactNode => {
       );
     }
 
-    return (
-      <FormattedText key={index} style="">
-        {part}
-      </FormattedText>
-    );
+    // Default text
+    return <FormattedText key={index}>{part}</FormattedText>;
   });
 };

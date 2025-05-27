@@ -1,7 +1,7 @@
 import "./formattedText.css";
 
 interface FormattedTextProps {
-  style: string;
+  style?: string;
   children: React.ReactNode;
 }
 
